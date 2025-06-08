@@ -1,6 +1,7 @@
 export interface OnboardingState {
   step: number;
-  setStep: React.Dispatch<React.SetStateAction<number>>;
+  setStep: (val: number) => void;
+  maxStep: number;
   selectedSkip: number | null;
-  setSelectedSkip: React.Dispatch<React.SetStateAction<number | null>>;
+  setSelectedSkip: (val: number | null) => void;
 }

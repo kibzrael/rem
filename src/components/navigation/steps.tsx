@@ -1,8 +1,11 @@
+import { useOnboarding } from "@/store/onboarding";
 import { STEPS } from "@/utils/constants";
 import { Fragment } from "react/jsx-runtime";
 import StepDetails from "./step";
 
 const StepsNavigation = () => {
+  const { step: currentStep, maxStep } = useOnboarding();
+
   return (
     <aside
       role="tabpanel"
@@ -12,12 +15,23 @@ const StepsNavigation = () => {
           {i !== 0 && (
             <div className="flex-1 flex lg:flex-col max-lg:h-10.5 lg:w-14.5 items-center">
               <div
-                className={"divider" + (i < 3 ? " divider-active" : "")}></div>
+                className={
+                  "divider" + (i < currentStep + 1 ? " divider-active" : "")
+                }></div>
             </div>
           )}
           <StepDetails
+            index={i}
             step={step}
-            state={i < 2 ? "completed" : i < 3 ? "active" : "disabled"}
+            state={
+              i < currentStep
+                ? "completed"
+                : i < currentStep + 1
+                ? "current"
+                : i < maxStep + 1
+                ? "active"
+                : "disabled"
+            }
           />
         </Fragment>
       ))}

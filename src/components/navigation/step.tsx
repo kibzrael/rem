@@ -1,17 +1,27 @@
+import { useOnboarding } from "@/store/onboarding";
 import type { Step } from "@/types/navigation";
 
 interface Props {
   step: Step;
-  state: "completed" | "active" | "disabled";
+  state: "completed" | "current" | "active" | "disabled";
+  index: number;
 }
 
-const StepDetails = ({ step, state }: Props) => {
+const StepDetails = ({ step, state, index }: Props) => {
+  const { setStep } = useOnboarding();
+
   return (
     <div
       role="tab"
+      onClick={() => {
+        if (state === "disabled") return;
+        setStep(index);
+      }}
       className={
         "flex max-lg:flex-col items-center gap-2 lg:gap-5 max-sm:flex-0 transition-all" +
         (state === "completed"
+          ? " text-primary"
+          : state === "current"
           ? " text-primary"
           : state === "active"
           ? " text-default"
@@ -19,12 +29,14 @@ const StepDetails = ({ step, state }: Props) => {
       }>
       <div
         className={
-          "p-2 lg:p-3 rounded-full border border-subtitle transition-all" +
+          "p-2 lg:p-3 rounded-full border transition-all" +
           (state === "completed"
             ? " bg-primary text-white border-transparent"
+            : state === "current"
+            ? " text-primary border-primary"
             : state === "active"
-            ? " text-default bg-surface-highlight"
-            : "")
+            ? " text-default border-default"
+            : " border-subtitle")
         }>
         <step.icon className="w-4 h-4 sm:w-6 sm:h-6 lg:w-8 lg:h-8" />
       </div>

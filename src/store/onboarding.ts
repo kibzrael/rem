@@ -2,8 +2,9 @@ import type { OnboardingState } from "@/types/onboarding";
 import { createContext, useContext } from "react";
 
 export const defaultOnboardingState: OnboardingState = {
-  step: 3,
+  step: 2,
   setStep: () => {},
+  maxStep: 2,
   selectedSkip: null,
   setSelectedSkip: () => {},
 };

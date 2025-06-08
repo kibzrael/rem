@@ -8,7 +8,7 @@ import SkipSizeCard from "../skip/card";
 const ChooseSkipTab = () => {
   const [skips, setSkips] = useState<Skip[]>();
 
-  const { selectedSkip: selectedId } = useOnboarding();
+  const { selectedSkip: selectedId, step, setStep } = useOnboarding();
   const selectedSkip = skips?.find((s) => s.id === selectedId);
 
   const fetchSkips = async () => {
@@ -71,8 +71,15 @@ const ChooseSkipTab = () => {
         )}
 
         <div className="flex gap-4 min-w-[min(80vw,20rem)]">
-          <button className="flex-1 btn btn-tonal">Back</button>
-          <button className="flex-[3] btn" disabled={!selectedSkip}>
+          <button
+            className="flex-1 btn btn-tonal"
+            onClick={() => setStep(step - 1)}>
+            Back
+          </button>
+          <button
+            className="flex-[3] btn"
+            disabled={!selectedSkip}
+            onClick={() => setStep(step + 1)}>
             Continue
           </button>
         </div>
