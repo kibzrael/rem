@@ -5,10 +5,12 @@ import { Info } from "lucide-react";
 import { useEffect, useState } from "react";
 import LoadingIndicator from "../common/loading";
 import SkipSizeCard from "../skip/card";
+import TabFooter from "./footer";
+
 const ChooseSkipTab = () => {
   const [skips, setSkips] = useState<Skip[]>();
 
-  const { selectedSkip: selectedId, step, setStep } = useOnboarding();
+  const { selectedSkip: selectedId } = useOnboarding();
   const selectedSkip = skips?.find((s) => s.id === selectedId);
 
   const fetchSkips = async () => {
@@ -51,7 +53,7 @@ const ChooseSkipTab = () => {
         <SkipSizeCard key={skip.id} skip={skip} />
       ))}
 
-      <div className="sticky bottom-0 !mt-0 -m-4 sm:-m-8 lg:-m-12 flex max-lg:flex-col lg:items-center justify-between gap-4 px-6 sm:px-10 py-6 border-t border-default bg-surface-default/60 backdrop-blur-2xl">
+      <TabFooter disabled={!selectedSkip}>
         {selectedSkip ? (
           <div className="flex items-center gap-4 w-full lg:max-w-xs">
             <div className="flex flex-col flex-1">
@@ -69,21 +71,7 @@ const ChooseSkipTab = () => {
             Please select a skip size
           </span>
         )}
-
-        <div className="flex gap-4 min-w-[min(80vw,20rem)]">
-          <button
-            className="flex-1 btn btn-tonal"
-            onClick={() => setStep(step - 1)}>
-            Back
-          </button>
-          <button
-            className="flex-[3] btn"
-            disabled={!selectedSkip}
-            onClick={() => setStep(step + 1)}>
-            Continue
-          </button>
-        </div>
-      </div>
+      </TabFooter>
     </section>
   );
 };
