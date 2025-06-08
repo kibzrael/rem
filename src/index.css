@@ -1,1 +1,89 @@
 @import "tailwindcss";
+
+@theme {
+  /* Brand colors */
+  --color-primary: #4077ff;
+
+  /* Surface colors */
+  --background-color-surface-default: #000000;
+  --background-color-surface-secondary: #161616;
+  --background-color-surface-highlight: #000d2d;
+
+  /* Border colors */
+  --border-color-default: #2f2f2f;
+
+  /* Text colors */
+  --color-default: #ffffff;
+  --color-subtitle: #7a7a7a;
+  --color-on-primary: #ffffff;
+
+  /* Support colors */
+  --color-warning: #eab308;
+  --color-success: #3ba936;
+}
+
+@layer base {
+  :root {
+    color-scheme: dark;
+    --tw-duration: 500ms;
+    @media (prefers-reduced-motion) {
+      --tw-duration: 0ms;
+    }
+  }
+
+  body {
+    @apply bg-surface-default text-default;
+  }
+
+  a,
+  button,
+  *[role="button"] {
+    cursor: pointer;
+  }
+}
+
+/* Typography */
+@utility text-headline-lg {
+  @apply text-3xl font-bold lg:text-4xl;
+}
+
+@utility text-headline-md {
+  @apply text-2xl font-bold lg:text-3xl;
+}
+
+@utility text-headline-sm {
+  @apply text-xl font-bold lg:text-2xl;
+}
+
+@utility text-body-lg {
+  @apply text-base font-medium lg:text-lg;
+}
+
+@utility text-body-md {
+  @apply text-sm font-medium lg:text-base;
+}
+
+@utility text-body-sm {
+  @apply text-xs lg:text-sm;
+}
+
+/* Components */
+@utility chip {
+  @apply flex items-center justify-center py-2 px-3 gap-2 rounded-lg bg-surface-default whitespace-nowrap;
+}
+
+@utility btn {
+  @apply rounded-xl bg-primary text-on-primary font-semibold text-sm px-8 pt-[0.5625rem] pb-[0.6875rem] lg:text-base lg:pt-[0.6875rem] lg:pb-[0.75rem] flex items-center justify-center gap-2 whitespace-nowrap transition-all shadow-primary;
+}
+
+@utility btn-tonal {
+  @apply bg-surface-secondary text-default hover:bg-surface-highlight;
+}
+
+.btn svg {
+  @apply w-5 h-5;
+}
+
+.btn:hover {
+  box-shadow: 0 8px 15px -10px var(--tw-shadow-color);
+}
