@@ -91,6 +91,10 @@
   @apply bg-surface-secondary text-default hover:bg-surface-highlight;
 }
 
+.btn:disabled {
+  @apply opacity-50 cursor-not-allowed;
+}
+
 .btn svg {
   @apply w-5 h-5;
 }
@@ -105,4 +109,8 @@
 
 @utility divider-active {
   @apply bg-primary max-lg:h-1 lg:w-1;
+}
+
+@utility min-h-dashboard {
+  @apply min-h-[calc(100vh-8rem)];
 }

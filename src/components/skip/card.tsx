@@ -1,5 +1,5 @@
+import { useOnboarding } from "@/store/onboarding";
 import { Circle, CircleCheckBig } from "lucide-react";
-import { useState } from "react";
 import type { Skip } from "../../types/skip";
 import SkipTag from "./tag";
 
@@ -8,18 +8,22 @@ interface Props {
 }
 
 const SkipSizeCard = ({ skip }: Props) => {
-  // TODO: switch to useContext
-  const [selected, setSelected] = useState(false);
+  const { selectedSkip, setSelectedSkip } = useOnboarding();
+
+  const selected = selectedSkip === skip.id;
+
   return (
     <article
       role="radio"
       className={
-        "group relative | flex @max-xl:flex-col p-2 @4xl:p-4 @xl:items-center gap-4 @4xl:gap-9 rounded-2xl border hover:border-primary hover:-translate-y-1 transition-all" +
+        "group relative | flex @max-xl:flex-col p-2 @4xl:p-4 @xl:items-center gap-4 @4xl:gap-9 rounded-2xl border-2 hover:border-primary hover:-translate-y-1 transition-all" +
         (selected
-          ? " bg-surface-highlight border-2 border-primary"
+          ? " bg-surface-highlight border-primary"
           : " bg-surface-secondary border-transparent")
       }
-      onClick={() => setSelected(!selected)}>
+      onClick={() =>
+        selected ? setSelectedSkip(null) : setSelectedSkip(skip.id)
+      }>
       <img
         src={`/images/skip-${skip.size}.webp`}
         alt="Skip Image"
