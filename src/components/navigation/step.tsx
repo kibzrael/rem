@@ -26,7 +26,7 @@ const StepDetails = ({ step, state }: Props) => {
             ? " text-default bg-surface-highlight"
             : "")
         }>
-        <step.icon className="w-6 h-6 lg:w-8 lg:h-8" />
+        <step.icon className="w-4 h-4 sm:w-6 sm:h-6 lg:w-8 lg:h-8" />
       </div>
       <span className="text-xs sm:text-sm lg:text-xl max-lg:text-center">
         {step.label}

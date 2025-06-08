@@ -4,9 +4,9 @@ import StepDetails from "./step";
 
 const StepsNavigation = () => {
   return (
-    <nav
+    <aside
       role="tabpanel"
-      className="flex lg:flex-col gap-1 lg:gap-3 lg:min-h-[min(80vh,50rem)]">
+      className="flex lg:flex-col gap-1 lg:gap-3 lg:min-h-[min(80vh,50rem)] sticky top-0 z-10 bg-surface-secondary p-4 lg:px-8 lg:py-16">
       {STEPS.map((step, i) => (
         <Fragment key={i}>
           {i !== 0 && (
@@ -21,7 +21,7 @@ const StepsNavigation = () => {
           />
         </Fragment>
       ))}
-    </nav>
+    </aside>
   );
 };
 

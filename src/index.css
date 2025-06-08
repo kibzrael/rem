@@ -33,7 +33,7 @@
   }
 
   body {
-    @apply bg-surface-default text-default;
+    @apply bg-surface-secondary text-default;
   }
 
   a,
@@ -43,6 +43,10 @@
   *[role="radio"] {
     cursor: pointer;
   }
+}
+
+@utility container {
+  @apply max-w-screen-2xl mx-auto;
 }
 
 /* Typography */
@@ -72,11 +76,11 @@
 
 /* Components */
 @utility chip {
-  @apply flex items-center justify-center py-1.5 px-3 gap-2 text-sm lg:py-2 lg:px-3 lg:text-base rounded-lg bg-surface-default whitespace-nowrap;
+  @apply flex items-center justify-center py-1.5 px-3 gap-2 text-xs lg:py-2 lg:px-3 lg:text-sm rounded-lg bg-surface-default whitespace-nowrap;
 }
 
 .chip svg {
-  @apply w-5 h-5 lg:w-6 lg:h-6;
+  @apply w-4 h-4 lg:w-5 lg:h-5;
 }
 
 @utility btn {

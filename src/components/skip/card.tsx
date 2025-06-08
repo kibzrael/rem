@@ -14,18 +14,18 @@ const SkipSizeCard = ({ skip }: Props) => {
     <article
       role="radio"
       className={
-        "group relative | flex max-lg:flex-col p-2 lg:p-4 lg:items-center gap-4 lg:gap-9 rounded-2xl border hover:border-primary hover:-translate-y-1 transition-all" +
+        "group relative | flex @max-xl:flex-col p-2 @4xl:p-4 @xl:items-center gap-4 @4xl:gap-9 rounded-2xl border hover:border-primary hover:-translate-y-1 transition-all" +
         (selected
           ? " bg-surface-highlight border-2 border-primary"
           : " bg-surface-secondary border-transparent")
       }
       onClick={() => setSelected(!selected)}>
       <img
-        src={skip.image}
+        src={`/images/skip-${skip.size}.webp`}
         alt="Skip Image"
-        className="w-full lg:max-w-[12rem] h-auto aspect-[3] lg:aspect-[3/2] rounded-2xl object-cover"
+        className="w-full @xl:max-w-[9rem] @4xl:max-w-[12rem] h-auto aspect-[3] @xl:aspect-[3/2] rounded-2xl object-cover"
       />
-      <div className="flex-1 flex flex-col gap-4 p-4">
+      <div className="flex-1 flex flex-col gap-4 p-2 @4xl:p-4">
         <div className="flex items-center gap-4">
           <div className="flex flex-col flex-1">
             <h2 className="text-headline-sm">{skip.size} Yards</h2>
@@ -37,7 +37,7 @@ const SkipSizeCard = ({ skip }: Props) => {
             £{skip.price_before_vat + skip.vat}
           </span>
         </div>
-        <div className="flex gap-3 lg:gap-6 flex-wrap">
+        <div className="flex gap-3 @4xl:gap-x-6 flex-wrap">
           <SkipTag
             state={skip.allowed_on_road}
             trueLabel="Allowed on the road"
@@ -49,9 +49,9 @@ const SkipSizeCard = ({ skip }: Props) => {
             falseLabel="No heavy waste"
           />
           {selected ? (
-            <CircleCheckBig className="w-7 h-7 text-primary max-lg:bg-white rounded-full ml-auto max-lg:absolute right-4 top-4" />
+            <CircleCheckBig className="w-7 h-7 text-primary @max-xl:bg-white rounded-full ml-auto @max-xl:absolute right-4 top-4" />
           ) : (
-            <Circle className="w-7 h-7 text-white lg:text-subtitle group-hover:text-primary transition-all ml-auto max-lg:absolute right-4 top-4" />
+            <Circle className="w-7 h-7 text-white @xl:text-subtitle group-hover:text-primary transition-all ml-auto @max-xl:absolute right-4 top-4" />
           )}
         </div>
       </div>

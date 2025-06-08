@@ -1,12 +1,3 @@
-import skip10 from "@/assets/images/skip-10.webp";
-import skip12 from "@/assets/images/skip-12.webp";
-import skip14 from "@/assets/images/skip-14.webp";
-import skip16 from "@/assets/images/skip-16.webp";
-import skip20 from "@/assets/images/skip-20.webp";
-import skip4 from "@/assets/images/skip-4.webp";
-import skip40 from "@/assets/images/skip-40.webp";
-import skip6 from "@/assets/images/skip-6.webp";
-import skip8 from "@/assets/images/skip-8.webp";
 import type { Step } from "@/types/navigation";
 import {
   CalendarDays,
@@ -23,7 +14,6 @@ export const SKIPS: Skip[] = [
     id: 17933,
     size: 4,
     hire_period_days: 14,
-    image: skip4,
     transport_cost: null,
     per_tonne_cost: null,
     price_before_vat: 278,
@@ -40,7 +30,6 @@ export const SKIPS: Skip[] = [
     id: 17934,
     size: 6,
     hire_period_days: 14,
-    image: skip6,
     transport_cost: null,
     per_tonne_cost: null,
     price_before_vat: 305,
@@ -57,7 +46,6 @@ export const SKIPS: Skip[] = [
     id: 17935,
     size: 8,
     hire_period_days: 14,
-    image: skip8,
     transport_cost: null,
     per_tonne_cost: null,
     price_before_vat: 375,
@@ -74,7 +62,6 @@ export const SKIPS: Skip[] = [
     id: 17936,
     size: 10,
     hire_period_days: 14,
-    image: skip10,
     transport_cost: null,
     per_tonne_cost: null,
     price_before_vat: 400,
@@ -91,7 +78,6 @@ export const SKIPS: Skip[] = [
     id: 17937,
     size: 12,
     hire_period_days: 14,
-    image: skip12,
     transport_cost: null,
     per_tonne_cost: null,
     price_before_vat: 439,
@@ -108,7 +94,6 @@ export const SKIPS: Skip[] = [
     id: 17938,
     size: 14,
     hire_period_days: 14,
-    image: skip14,
     transport_cost: null,
     per_tonne_cost: null,
     price_before_vat: 470,
@@ -125,7 +110,6 @@ export const SKIPS: Skip[] = [
     id: 17939,
     size: 16,
     hire_period_days: 14,
-    image: skip16,
     transport_cost: null,
     per_tonne_cost: null,
     price_before_vat: 496,
@@ -142,7 +126,6 @@ export const SKIPS: Skip[] = [
     id: 15124,
     size: 20,
     hire_period_days: 14,
-    image: skip20,
     transport_cost: 248,
     per_tonne_cost: 248,
     price_before_vat: 992,
@@ -159,7 +142,6 @@ export const SKIPS: Skip[] = [
     id: 15125,
     size: 40,
     hire_period_days: 14,
-    image: skip40,
     transport_cost: 248,
     per_tonne_cost: 248,
     price_before_vat: 992,

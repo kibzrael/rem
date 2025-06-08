@@ -2,7 +2,6 @@ export interface Skip {
   id: number;
   size: number;
   hire_period_days: number;
-  image: string;
   transport_cost: number | null;
   per_tonne_cost: number | null;
   price_before_vat: number;
