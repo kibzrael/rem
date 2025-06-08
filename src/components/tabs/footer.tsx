@@ -2,7 +2,13 @@ import { useOnboarding } from "@/store/onboarding";
 import type { ReactNode } from "react";
 
 interface Props {
+  /**
+   * Components to rendered as preview next to the navigation buttons
+   */
   children?: ReactNode;
+  /**
+   * The disabled state of the "Continue" button
+   */
   disabled?: boolean;
 }
 

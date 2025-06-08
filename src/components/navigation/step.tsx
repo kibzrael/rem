@@ -3,6 +3,13 @@ import type { Step } from "@/types/navigation";
 
 interface Props {
   step: Step;
+
+  /**
+   *  Completed is a step that the user has already visited, and is before the current step.
+   *  Current is the step the user is currently viewing.
+   *  Active is a step that the user can visit, but is ahead of the current step.
+   *  Disabled is a step that the user is not allowed to visit.
+   */
   state: "completed" | "current" | "active" | "disabled";
   index: number;
 }

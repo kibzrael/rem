@@ -2,7 +2,13 @@ import { BadgeCheck, TriangleAlert } from "lucide-react";
 
 interface Props {
   state: boolean;
+  /**
+   * Label to be displayed when the state is true
+   */
   trueLabel: string;
+  /**
+   * Label to be displayed when the state is false
+   */
   falseLabel: string;
 }
 
