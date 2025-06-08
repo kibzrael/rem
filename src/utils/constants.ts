@@ -7,6 +7,15 @@ import skip4 from "@/assets/images/skip-4.webp";
 import skip40 from "@/assets/images/skip-40.webp";
 import skip6 from "@/assets/images/skip-6.webp";
 import skip8 from "@/assets/images/skip-8.webp";
+import type { Step } from "@/types/navigation";
+import {
+  CalendarDays,
+  CreditCard,
+  MapPin,
+  Shield,
+  Trash2,
+  Truck,
+} from "lucide-react";
 import type { Skip } from "../types/skip";
 
 export const SKIPS: Skip[] = [
@@ -162,5 +171,32 @@ export const SKIPS: Skip[] = [
     updated_at: "2025-04-07T13:16:52.603",
     allowed_on_road: false,
     allows_heavy_waste: false,
+  },
+];
+
+export const STEPS: Step[] = [
+  {
+    icon: MapPin,
+    label: "Postcode",
+  },
+  {
+    icon: Trash2,
+    label: "Waste Type",
+  },
+  {
+    icon: Truck,
+    label: "Select Skip",
+  },
+  {
+    icon: Shield,
+    label: "Permit Check",
+  },
+  {
+    icon: CalendarDays,
+    label: "Choose Date",
+  },
+  {
+    icon: CreditCard,
+    label: "Payment",
   },
 ];

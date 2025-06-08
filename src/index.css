@@ -11,6 +11,7 @@
 
   /* Border colors */
   --border-color-default: #2f2f2f;
+  --border-color-text-default: #ffffff;
 
   /* Text colors */
   --color-default: #ffffff;
@@ -38,6 +39,7 @@
   a,
   button,
   *[role="button"],
+  *[role="tab"],
   *[role="radio"] {
     cursor: pointer;
   }
@@ -91,4 +93,12 @@
 
 .btn:hover {
   box-shadow: 0 8px 15px -10px var(--tw-shadow-color);
+}
+
+@utility divider {
+  @apply flex-1 rounded-full max-lg:h-0.5 lg:w-0.5 bg-subtitle transition-all;
+}
+
+@utility divider-active {
+  @apply bg-primary max-lg:h-1 lg:w-1;
 }
